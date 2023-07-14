@@ -10,7 +10,7 @@ int n;
 for (n = 0; n < 10; n++)
 {
 putchar('0' +  n);
-if(n < 9)
+if (n < 9)
 {
 putchar(44);
 putchar(32);
