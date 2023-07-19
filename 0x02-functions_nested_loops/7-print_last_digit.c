@@ -13,12 +13,11 @@ if (n >= 0)
 {
 	m = n % 10;
 	_putchar(m + '0');
-	return (m);
 }
 else
 {
 	m = (-1) * n % 10;
 	_putchar(m + '0');
-	return (m);
 }
+return (m);
 }
