@@ -8,24 +8,25 @@
 */
 int print_last_digit(int n)
 {
+	int m;
 if (n != 0)
 {
 	if (n > 0)
 	{
-	int m = n % 10 ;
-	_putchar(m); 
-	return (m);
+		m = n % 10;
+		_putchar(m + '0');
+		return (m);
 	}
 	else
 	{
-	int m = (-1) * n % 10 ;
-        _putchar(m);
-        return (m);
+		m = (-1) * n % 10;
+		_putchar(m + '0');
+		return (m);
 	}
 }
 else
 {
-	_putchar(0);
+	_putchar('0');
 	return (0);
 }
 }
