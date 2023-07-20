@@ -1,12 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 /**
-*print_most_numbers - prints all numbers from 0 to 9 except 2 and 4
+*more_numbers -  10 times the numbers, from 0 to 14
 *Does retuns anything
 */
 void more_numbers(void)
 {
-	int i,j;
+	int i, j;
 
 	for (i = 1; i <= 10; i++)
 	{
