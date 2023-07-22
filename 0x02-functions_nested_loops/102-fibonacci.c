@@ -6,13 +6,14 @@
  */
 int main(void)
 {
-	int i, s = 1, t = 2, n;
+	int i;
+       long long int s = 1, t = 2, n;
 
-	printf("%d, %d, ", s, t);
+	printf("%lld, %lld, ", s, t);
 	for (i = 0; i < 48; i++)
 	{
 		n = s + t;
-		printf("%d", n);
+		printf("%lld", n);
 		s =  t;
 		t =  n;
 		if (i  < 47)
