@@ -18,7 +18,7 @@ int _strlen(char *s)
 * _strncat - concatenates two strings
 * @src: a string pointer
 * @dest: a string pointer
-* @n: the number of bytes from src 
+* @n: the number of bytes from src
 * Return: the concatenating strings
 */
 char *_strncat(char *dest, char *src, int n)
