@@ -14,14 +14,21 @@ char *cap_string(char *a)
 	}
 	for (i = 0; i < p; i++)
 	{
-		if (a[i] == ' ' || a[i] == '\t' || a[i] == '\n' ||
+		if (a[i] == '\t')
+		{
+			a[i] = ' ';
+		}
+	}
+	for (i = 0; i < p; i++)
+	{
+		if (a[i] == ' ' || a[i] == '\n' ||
 				a[i] == ',' || a[i] == '!' || a[i] == '.' ||
 				a[i] == '?' || a[i] == '\"' || a[i] == '(' ||
 				a[i] == ')' || a[i] == '{' || a[i] == '}' || a[i] == ';')
 		{
 			count = 1;
 		}
-		else if (count)
+		else if (count && (a[i] >= 97 && a[i] <= 123))
 		{
 			a[i] = a[i] - 32;
 			count = 0;
@@ -29,6 +36,7 @@ char *cap_string(char *a)
 		else
 		{
 			a[i] = a[i];
+			count = 0;
 		}
 	}
 	return (a);
