@@ -21,7 +21,7 @@ char *cap_string(char *a)
 	{
 		for (j = 0; a[i] >= 97 && a[i] <= 123 && arr[j] != '\0'; j++)
 		{
-			if (a[i - 1] == arr[j])
+			if (a[i - 1] == arr[j] || a[i] == a[0])
 			{
 				a[i] = a[i] - 32;
 			}
