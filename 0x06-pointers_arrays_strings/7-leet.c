@@ -6,38 +6,20 @@
 */
 char *leet(char *a)
 {
-	int p = 0, i;
+	int j, i;
+	char *b = "aeotl";
+	char *c = "43071";
 
-	while (a[p] != '\0')
+	for (i = 0; a[i] != '\0'; i++)
 	{
-		p++;
-	}
-	for (i = 0; i < p; i++)
-	{
-		if (a[i] == 'a' || a[i] == 'A')
+		for (j = 0; b[j] != '\0'; j++)
 		{
-			a[i] = '4';
+			if (a[i] == b[j] || a[i] == b[j] - 32)
+			{
+			a[i] = c[j];
+			}
 		}
-		else if (a[i] == 'e' || a[i] == 'E')
-		{
-			a[i] = '3';
-		}
-		else if (a[i] == 'o' || a[i] == 'O')
-		{
-			a[i] = '0';
-		}
-		else if (a[i] == 't' || a[i] == 'T')
-		{
-			a[i] = '7';
-		}
-		else if (a[i] == 'l' || a[i] == 'L')
-		{
-			a[i] = '1';
-		}
-		else
-		{
-			a[i] = a[i];
-		}
+
 	}
 	return (a);
 }
