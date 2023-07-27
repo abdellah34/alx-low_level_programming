@@ -6,37 +6,21 @@
 */
 char *cap_string(char *a)
 {
-	int p = 0, i, count = 0;
+	char arr[] = {'\n','\t',' ',',',';','!','?','\"','(',')','{','}'};
+	int  i, j;
 
-	while (a[p] != '\0')
+	for (i = 0; a[i] != '\0'; i++)
 	{
-		p++;
-	}
-	for (i = 0; i < p; i++)
-	{
-		if (a[i] == '\t')
+		for (j = 0; a[i] >= 97 && a[i] <= 123 && arr[j] != '\0'; j++ )
 		{
-			a[i] = ' ';
-		}
-	}
-	for (i = 0; i < p; i++)
-	{
-		if (a[i] == ' ' || a[i] == '\n' ||
-				a[i] == ',' || a[i] == '!' || a[i] == '.' ||
-				a[i] == '?' || a[i] == '\"' || a[i] == '(' ||
-				a[i] == ')' || a[i] == '{' || a[i] == '}' || a[i] == ';')
-		{
-			count = 1;
-		}
-		else if (count && (a[i] >= 97 && a[i] <= 123))
-		{
-			a[i] = a[i] - 32;
-			count = 0;
-		}
-		else
-		{
-			a[i] = a[i];
-			count = 0;
+			if (a[i - 1] == arr[j])
+			{
+				a[i] = a[i] - 32;
+			}
+			else
+			{
+				a[i] = a[i];
+			}
 		}
 	}
 	return (a);
