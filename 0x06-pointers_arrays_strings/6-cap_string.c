@@ -6,8 +6,8 @@
 */
 char *cap_string(char *a)
 {
-	char arr[] = {'\n', ' ', ',', ';', '!', '?', '\"', '(', ')', '{', '}'};
-	int  i, j;
+	int i, j, count;
+	char p[] = "\n  ,.\t;!?\"(){}";
 
 	for (i = 0; a[i] != '\0'; i++)
 	{
@@ -16,14 +16,22 @@ char *cap_string(char *a)
 			a[i] = ' ';
 		}
 	}
-
 	for (i = 0; a[i] != '\0'; i++)
 	{
-		for (j = 0; a[i] >= 97 && a[i] <= 123 && arr[j] != '\0'; j++)
+		for (j = 0; p[j] != '\0'; j++)
 		{
-			if (a[i - 1] == arr[j] || a[i] == a[0])
+			if ((a[i] == 0) || a[i] == p[j])
+			{
+				count = 1;
+			}
+			else if (a[i] >= 'a' && a[i] <= 'z' && count)
 			{
 				a[i] = a[i] - 32;
+				count = 0;
+			}
+			else
+			{
+				a[i] = a[i];
 			}
 		}
 	}
