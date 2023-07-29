@@ -11,13 +11,6 @@ char *cap_string(char *a)
 
 	for (i = 0; a[i] != '\0'; i++)
 	{
-		if (a[i] == '\t')
-		{
-			a[i] = ' ';
-		}
-	}
-	for (i = 0; a[i] != '\0'; i++)
-	{
 		if (a[i] >= 'a' && a[i] <= 'z')
 			for (j = 0; p[j] != '\0'; j++)
 			{
