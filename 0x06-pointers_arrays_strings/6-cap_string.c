@@ -6,7 +6,7 @@
 */
 char *cap_string(char *a)
 {
-	int i, j, count;
+	int i, j, count = 0;
 	char p[] = "\n  ,.\t;!?\"(){}";
 
 	for (i = 0; a[i] != '\0'; i++)
@@ -20,20 +20,20 @@ char *cap_string(char *a)
 	{
 		for (j = 0; p[j] != '\0'; j++)
 		{
-			if ((a[i] == 0) || a[i] == p[j])
+			if ((a[i] == 0) || a[i - 1] == p[j])
 			{
 				count = 1;
 			}
 			else if (a[i] >= 'a' && a[i] <= 'z' && count)
 			{
 				a[i] = a[i] - 32;
-				count = 0;
 			}
 			else
 			{
 				a[i] = a[i];
 			}
 		}
+		count = 0;
 	}
 	return (a);
 }
