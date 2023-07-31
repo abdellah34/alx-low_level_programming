@@ -1,4 +1,5 @@
 #include "main.h"
+#include<stdio.h>
 /**
 * _strchr - locates a charcter in a string
 * @s: is the string to scanned
@@ -15,5 +16,5 @@ char *_strchr(char *s, char c)
 		}
 	s++;
 	}
-	return ('\0');
+	return (NULL);
 }
