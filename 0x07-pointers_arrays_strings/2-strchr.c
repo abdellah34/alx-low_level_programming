@@ -1,5 +1,4 @@
 #include "main.h"
-#define NULL ((void *)0)
 /**
 * _strchr - locates a charcter in a string
 * @s: is the string to scanned
@@ -16,5 +15,5 @@ char *_strchr(char *s, char c)
 		}
 	s++;
 	}
-	return (NULL);
+	return (0);
 }
