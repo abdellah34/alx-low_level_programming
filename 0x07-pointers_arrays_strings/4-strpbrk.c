@@ -8,6 +8,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	char *ch;
+
 	while (*s)
 	{
 		ch = accept;
