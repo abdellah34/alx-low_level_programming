@@ -28,12 +28,10 @@ char *_strdup(char *str)
 	}
 	a = (char *)malloc(size * sizeof(char) + 1);
 
-	if (a != 0)
-	{
+
 		for (i = 0; str[i] != '\0'; i++)
 		{
 			a[i] = str[i];
 		}
-	}
 	return (a);
 }
