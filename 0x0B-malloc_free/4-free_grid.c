@@ -1,34 +1,17 @@
 #include <stdlib.h>
 #include "main.h"
-
 /**
- * argstostr - concatenate all the arguments of your program
- * @ac: num of args
- * @av: array of pointer to args
- * Return: a pointer to the duplicate string , or Null if it fail
+ * free_grid - frees a 2d grid previously created by alloc_grid
+ * @grid: pointer to 2d array
+ * @height: height of 2d array
+ *
+ * Return: void
  */
-char *argstostr(int ac, char **av)
+void free_grid(int **grid, int height __attribute__((unused)))
 {
 	int i = 0;
-	int j = 0;
-	int k = 0;
-	int tot_len = 0;
-	char *newArr;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
-	for (; i < ac; i++)
-		for (j = 0; av[i][j]; j++)
-			tot_len++;
-	newArr = malloc(sizeof(char) * tot_len + ac + 1);
-	if (newArr == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j]; j++, k++)
-			newArr[k] = av[i][j];
-		newArr[k] = '\n';
-		k++;
-	}
-	return (newArr);
+	for (; i < height; i++)
+		free(grid[i]);
+	free(grid);
 }
