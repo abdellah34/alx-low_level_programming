@@ -8,19 +8,17 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
-	unsigned int tot, k;
+	 unsigned int tot = nmemb * size, k;
+	void *ptr = malloc (tot);
+	unsigned char *p = (unsigned char *)ptr;
 
-	tot = nmemb * size;
 	if (tot == 0)
 		return (NULL);
-	ptr = (char *)malloc(tot);
 	if (ptr == NULL)
 		return (NULL);
-	for (k = 0; k < nmemb; k++)
+	for (k = 0; k < tot; k++)
 	{
-		*(ptr + k) = 0;
+		p[k] = 0;
 	}
-	*(ptr + k) = '\0';
 	return (ptr);
 }
