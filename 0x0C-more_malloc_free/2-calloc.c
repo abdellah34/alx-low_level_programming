@@ -8,8 +8,8 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	 unsigned int tot = nmemb * size, k;
-	void *ptr = malloc (tot);
+	unsigned int tot = nmemb * size, k;
+	void *ptr = malloc(tot);
 	unsigned char *p = (unsigned char *)ptr;
 
 	if (nmemb == 0 || size == 0)
