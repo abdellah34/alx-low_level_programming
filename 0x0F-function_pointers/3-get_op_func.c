@@ -2,12 +2,12 @@
 #include "3-calc.h"
 
 /**
- * op_add - add two numbers. 
- * @a: the first integer .
- * @b: the second integer.
- * Return: the sum of a and b.
+ * get_op_func - Returns a pointer to the function that corresponds
+ *               to the operator given as a parameter.
+ * @s: Operator passed as argument to the program
+ * Return: Pointer to the corresponding function, or NULL if not found
  */
-int (*get_op_func(char *s))(int, int);
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -18,13 +18,12 @@ int (*get_op_func(char *s))(int, int);
 		{NULL, NULL}
 	};
 	int i = 0;
+
 	while (i < 5)
 	{
-		if (ops->op[i] != *s)
-		{
-			return( NULL);
-			i++;
-		}
+		if (*(ops[i].op) == *s && *(s + 1) == '\0')
+			return (ops[i].f);
+		i++;
 	}
-	return (ops[i]);
+	return (NULL);
 }
