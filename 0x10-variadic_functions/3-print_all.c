@@ -10,7 +10,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	int i = 0;
-	char *x;
+	char *s;
 
 	va_start(list, format);
 
@@ -28,13 +28,13 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(list, double));
 			break;
 		case 's':
-			x = va_arg(list, char*);
-			if (format[i] == '\0' || !format)
+			s = va_arg(list, char*);
+			if (!s)
 			{
 				printf("(nil)");
 				break;
 			}
-			printf("%s", x);
+			printf("%s", s);
 			break;
 		default:
 			i++;
