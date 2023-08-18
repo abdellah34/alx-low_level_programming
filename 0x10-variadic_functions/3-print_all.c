@@ -3,9 +3,8 @@
 
 /**
  * print_all - print strings.
- * @n: the number of strings.
- * @separator: is the string to be printed between numbers.
- * Return: the result of the addition.
+ * @format: is the list  of type of arguments.
+ * Return: anything.
  */
 void print_all(const char * const format, ...)
 {
@@ -30,8 +29,8 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			x = va_arg(list, char*);
-			if (format[i] == '\0')
-			{
+			if (format[i] == NULL)
+			:
 				printf("(nil)");
 				break;
 			}
