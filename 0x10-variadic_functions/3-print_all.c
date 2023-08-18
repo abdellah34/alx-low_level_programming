@@ -29,8 +29,8 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			x = va_arg(list, char*);
-			if (format[i] == NULL)
-			:
+			if (format[i] == '\0' || !format)
+			{
 				printf("(nil)");
 				break;
 			}
