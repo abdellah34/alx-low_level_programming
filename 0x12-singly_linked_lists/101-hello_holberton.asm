@@ -1,18 +1,25 @@
 section .data
-    hello db 'Hello, Holberton',0
+    hello_msg db "Hello, Holberton",0
+    fmt db "%s", 0xA, 0
 
 section .text
-    global _start
+    global main
+    extern printf
 
-_start:
-    ; Write "Hello, Holberton" to stdout
-    mov rax, 1                  ; syscall number for sys_write
-    mov rdi, 1                  ; file descriptor 1 (stdout)
-    mov rsi, hello             ; pointer to the string
-    mov rdx, 13                ; length of the string
+main:
+    push rdi               ; Preserve registers
+    push rsi
+
+    lea rdi, [hello_msg]   ; Load address of hello_msg
+    lea rsi, [fmt]         ; Load address of format string
+    call printf           ; Call printf function
+
+    pop rsi                ; Restore registers
+    pop rdi
+
+    mov rax, 0x60          ; Exit system call number
+    xor rdi, rdi           ; Return status 0
     syscall
 
-    ; Exit the program
-    mov rax, 60                 ; syscall number for sys_exit
-    xor rdi, rdi                ; exit status 0
-    syscall
+    ret
+
