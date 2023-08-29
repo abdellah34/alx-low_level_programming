@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * free_listint2 - free a list and set the head to NULL.
+ * pop_listint - delete the head node of a list.
  * @head: the head node .
- * Returns: void .
+ * Returns: the head node’s data (n).
  **/
 int pop_listint(listint_t **head)
 {
@@ -11,7 +11,7 @@ int pop_listint(listint_t **head)
 	listint_t *aux = *head;
 	int n = curr->n;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return (0);
 
 	curr = curr->next;
