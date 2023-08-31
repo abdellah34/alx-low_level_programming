@@ -1,4 +1,4 @@
-# low level programming : C language
+# low level programming : C languagoe
 ##alx-low_level_programming
 
 * 0x00. C - Hello, World
@@ -20,6 +20,6 @@
 * 0x10. C - Variadic functions
 * 0x12. C - Singly linked lists
 * 0x13. C - More singly linked lists
-
+* 0x14. C - Bit manipulation
 
 * ...
