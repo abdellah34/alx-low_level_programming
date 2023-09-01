@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * tow_pow - calculate the power of tow.
+ * two_pow - calculate the power of tow.
  * @p: the power.
  * Return: the power of tow.
  */
-unsigned int tow_pow(int p)
+unsigned int two_pow(int p)
 {
 	unsigned int m = 1;
 
@@ -25,10 +25,12 @@ unsigned int tow_pow(int p)
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int n = 0;
-	int i,  len = strlen(b);
+	int i,  len;
 
 	if (b == NULL)
 		return (0);
+
+	len = strlen (b);
 
 	for (i = len - 1; i >= 0; i--)
 	{
@@ -38,7 +40,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else if (b[i] == '1')
 		{
-			n += tow_pow(len - 1 - i);
+			n += two_pow(len - 1 - i);
 		}
 		else
 		{
