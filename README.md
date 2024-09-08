@@ -1,4 +1,4 @@
-# low level programming : C languagoe
+# low level programming : C language
 ##alx-low_level_programming
 
 * 0x00. C - Hello, World
